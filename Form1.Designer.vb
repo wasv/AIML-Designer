@@ -29,34 +29,32 @@ Partial Class Form1
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnInsert = New System.Windows.Forms.Button()
         Me.pnlCategories = New System.Windows.Forms.FlowLayoutPanel()
+        Me.butQuickSave = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'butOpen
         '
-        Me.butOpen.Location = New System.Drawing.Point(868, 15)
-        Me.butOpen.Margin = New System.Windows.Forms.Padding(4)
+        Me.butOpen.Location = New System.Drawing.Point(570, 11)
         Me.butOpen.Name = "butOpen"
-        Me.butOpen.Size = New System.Drawing.Size(100, 28)
+        Me.butOpen.Size = New System.Drawing.Size(75, 23)
         Me.butOpen.TabIndex = 2
         Me.butOpen.Text = "Open"
         Me.butOpen.UseVisualStyleBackColor = True
         '
         'butSave
         '
-        Me.butSave.Location = New System.Drawing.Point(976, 15)
-        Me.butSave.Margin = New System.Windows.Forms.Padding(4)
+        Me.butSave.Location = New System.Drawing.Point(651, 11)
         Me.butSave.Name = "butSave"
-        Me.butSave.Size = New System.Drawing.Size(100, 28)
+        Me.butSave.Size = New System.Drawing.Size(75, 23)
         Me.butSave.TabIndex = 3
-        Me.butSave.Text = "Save"
+        Me.butSave.Text = "Save As..."
         Me.butSave.UseVisualStyleBackColor = True
         '
         'butClose
         '
-        Me.butClose.Location = New System.Drawing.Point(1084, 13)
-        Me.butClose.Margin = New System.Windows.Forms.Padding(4)
+        Me.butClose.Location = New System.Drawing.Point(813, 11)
         Me.butClose.Name = "butClose"
-        Me.butClose.Size = New System.Drawing.Size(100, 28)
+        Me.butClose.Size = New System.Drawing.Size(75, 23)
         Me.butClose.TabIndex = 4
         Me.butClose.Text = "Close"
         Me.butClose.UseVisualStyleBackColor = True
@@ -64,28 +62,28 @@ Partial Class Form1
         'lstQuickText
         '
         Me.lstQuickText.FormattingEnabled = True
-        Me.lstQuickText.ItemHeight = 16
-        Me.lstQuickText.Items.AddRange(New Object() {"<star/>", "<sr/>", "<srai></srai>", "<set name=""xxx""></set>", "<get name=""xxx""/>", "<bot name=""name""/>", "<system mode=""sync""></system>"})
-        Me.lstQuickText.Location = New System.Drawing.Point(19, 50)
-        Me.lstQuickText.Margin = New System.Windows.Forms.Padding(4)
+        Me.lstQuickText.Items.AddRange(New Object() {"<star/>", "<sr/>", "<srai></srai>", "<set name=""xxx""></set>", "<get name=""xxx""/>", "<bot name=""name""/>", "<system mode=""sync""></system>", "<think></think>", "<condition></condition>", "<li></li>", "<li name=""xxx"" value=""xxx""></li>", "<li value=""xxx""></li>"})
+        Me.lstQuickText.Location = New System.Drawing.Point(14, 41)
         Me.lstQuickText.Name = "lstQuickText"
-        Me.lstQuickText.Size = New System.Drawing.Size(159, 324)
+        Me.lstQuickText.Size = New System.Drawing.Size(120, 264)
         Me.lstQuickText.TabIndex = 5
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(19, 11)
+        Me.btnAdd.Location = New System.Drawing.Point(14, 9)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(159, 32)
+        Me.btnAdd.Size = New System.Drawing.Size(119, 26)
         Me.btnAdd.TabIndex = 7
         Me.btnAdd.Text = "Add Category"
         Me.btnAdd.UseVisualStyleBackColor = True
         '
         'btnInsert
         '
-        Me.btnInsert.Location = New System.Drawing.Point(21, 381)
+        Me.btnInsert.Location = New System.Drawing.Point(16, 310)
+        Me.btnInsert.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnInsert.Name = "btnInsert"
-        Me.btnInsert.Size = New System.Drawing.Size(159, 29)
+        Me.btnInsert.Size = New System.Drawing.Size(119, 24)
         Me.btnInsert.TabIndex = 9
         Me.btnInsert.Text = "Insert Text"
         Me.btnInsert.UseVisualStyleBackColor = True
@@ -93,16 +91,27 @@ Partial Class Form1
         'pnlCategories
         '
         Me.pnlCategories.AutoScroll = True
-        Me.pnlCategories.Location = New System.Drawing.Point(186, 50)
+        Me.pnlCategories.Location = New System.Drawing.Point(140, 41)
+        Me.pnlCategories.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pnlCategories.Name = "pnlCategories"
-        Me.pnlCategories.Size = New System.Drawing.Size(1000, 500)
+        Me.pnlCategories.Size = New System.Drawing.Size(750, 406)
         Me.pnlCategories.TabIndex = 10
+        '
+        'butQuickSave
+        '
+        Me.butQuickSave.Location = New System.Drawing.Point(732, 11)
+        Me.butQuickSave.Name = "butQuickSave"
+        Me.butQuickSave.Size = New System.Drawing.Size(75, 23)
+        Me.butQuickSave.TabIndex = 11
+        Me.butQuickSave.Text = "Save"
+        Me.butQuickSave.UseVisualStyleBackColor = True
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1197, 553)
+        Me.ClientSize = New System.Drawing.Size(899, 457)
+        Me.Controls.Add(Me.butQuickSave)
         Me.Controls.Add(Me.pnlCategories)
         Me.Controls.Add(Me.btnInsert)
         Me.Controls.Add(Me.btnAdd)
@@ -110,10 +119,9 @@ Partial Class Form1
         Me.Controls.Add(Me.butClose)
         Me.Controls.Add(Me.butSave)
         Me.Controls.Add(Me.butOpen)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(1215, 600)
-        Me.MinimumSize = New System.Drawing.Size(1215, 600)
+        Me.MaximumSize = New System.Drawing.Size(915, 495)
+        Me.MinimumSize = New System.Drawing.Size(915, 495)
         Me.Name = "Form1"
         Me.Text = "AIML Editor"
         Me.ResumeLayout(False)
@@ -126,5 +134,6 @@ Partial Class Form1
     Friend WithEvents btnAdd As System.Windows.Forms.Button
     Friend WithEvents btnInsert As System.Windows.Forms.Button
     Friend WithEvents pnlCategories As System.Windows.Forms.FlowLayoutPanel
+    Friend WithEvents butQuickSave As System.Windows.Forms.Button
 
 End Class

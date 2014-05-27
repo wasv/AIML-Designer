@@ -33,68 +33,73 @@ Partial Class usrCategory
         '
         'txtPattern
         '
-        Me.txtPattern.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtPattern.Location = New System.Drawing.Point(76, 4)
+        Me.txtPattern.Location = New System.Drawing.Point(57, 3)
+        Me.txtPattern.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtPattern.Name = "txtPattern"
-        Me.txtPattern.Size = New System.Drawing.Size(391, 22)
+        Me.txtPattern.Size = New System.Drawing.Size(294, 20)
         Me.txtPattern.TabIndex = 0
         '
         'lblPattern
         '
         Me.lblPattern.AutoSize = True
-        Me.lblPattern.Location = New System.Drawing.Point(4, 7)
+        Me.lblPattern.Location = New System.Drawing.Point(3, 6)
+        Me.lblPattern.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblPattern.Name = "lblPattern"
-        Me.lblPattern.Size = New System.Drawing.Size(54, 17)
+        Me.lblPattern.Size = New System.Drawing.Size(41, 13)
         Me.lblPattern.TabIndex = 1
         Me.lblPattern.Text = "Pattern"
         '
         'lblThat
         '
         Me.lblThat.AutoSize = True
-        Me.lblThat.Location = New System.Drawing.Point(4, 34)
+        Me.lblThat.Location = New System.Drawing.Point(3, 28)
+        Me.lblThat.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblThat.Name = "lblThat"
-        Me.lblThat.Size = New System.Drawing.Size(37, 17)
+        Me.lblThat.Size = New System.Drawing.Size(29, 13)
         Me.lblThat.TabIndex = 2
         Me.lblThat.Text = "That"
         '
         'txtThat
         '
-        Me.txtThat.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtThat.Location = New System.Drawing.Point(76, 29)
+        Me.txtThat.Location = New System.Drawing.Point(57, 24)
+        Me.txtThat.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtThat.Name = "txtThat"
-        Me.txtThat.Size = New System.Drawing.Size(391, 22)
+        Me.txtThat.Size = New System.Drawing.Size(294, 20)
         Me.txtThat.TabIndex = 3
         '
         'lblTemplate
         '
         Me.lblTemplate.AutoSize = True
-        Me.lblTemplate.Location = New System.Drawing.Point(3, 61)
+        Me.lblTemplate.Location = New System.Drawing.Point(2, 50)
+        Me.lblTemplate.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTemplate.Name = "lblTemplate"
-        Me.lblTemplate.Size = New System.Drawing.Size(67, 17)
+        Me.lblTemplate.Size = New System.Drawing.Size(51, 13)
         Me.lblTemplate.TabIndex = 4
         Me.lblTemplate.Text = "Template"
         '
         'txtTemplate
         '
-        Me.txtTemplate.Location = New System.Drawing.Point(76, 57)
+        Me.txtTemplate.Location = New System.Drawing.Point(57, 46)
+        Me.txtTemplate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtTemplate.Multiline = True
         Me.txtTemplate.Name = "txtTemplate"
-        Me.txtTemplate.Size = New System.Drawing.Size(391, 86)
+        Me.txtTemplate.Size = New System.Drawing.Size(294, 71)
         Me.txtTemplate.TabIndex = 5
         '
         'btnRemove
         '
         Me.btnRemove.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRemove.Location = New System.Drawing.Point(7, 119)
+        Me.btnRemove.Location = New System.Drawing.Point(5, 97)
+        Me.btnRemove.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnRemove.Name = "btnRemove"
-        Me.btnRemove.Size = New System.Drawing.Size(63, 23)
+        Me.btnRemove.Size = New System.Drawing.Size(47, 19)
         Me.btnRemove.TabIndex = 6
         Me.btnRemove.Text = "Remove"
         Me.btnRemove.UseVisualStyleBackColor = True
         '
         'usrCategory
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.btnRemove)
         Me.Controls.Add(Me.txtTemplate)
@@ -103,8 +108,9 @@ Partial Class usrCategory
         Me.Controls.Add(Me.lblThat)
         Me.Controls.Add(Me.lblPattern)
         Me.Controls.Add(Me.txtPattern)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "usrCategory"
-        Me.Size = New System.Drawing.Size(470, 150)
+        Me.Size = New System.Drawing.Size(352, 122)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

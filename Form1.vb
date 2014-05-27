@@ -1,9 +1,11 @@
 ﻿Imports System.Xml
+Imports System.IO
 
 Public Class Form1
     Dim arrCategories As List(Of usrCategory)
     Dim intCategoriesCount = 0
     Dim txtFocused As TextBox
+    Dim strOpenFileName As String = ""
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         arrCategories = New List(Of usrCategory)
@@ -26,13 +28,18 @@ Public Class Form1
         Dim strFileName As String
 
         fd.Title = "Open File Dialog"
-        fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)
+        If strOpenFileName = "" Then
+            fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)
+        Else
+            fd.InitialDirectory = Path.GetDirectoryName(strOpenFileName)
+        End If
         fd.Filter = "All files (*.*)|*.*|AIML files (*.aiml)|*.aiml"
         fd.FilterIndex = 2
         fd.RestoreDirectory = True
 
         If fd.ShowDialog() = DialogResult.OK Then
             strFileName = fd.FileName
+            strOpenFileName = strFileName
             LoadFile(strFileName)
         End If
     End Sub
@@ -42,7 +49,11 @@ Public Class Form1
         Dim strFileName As String
 
         fd.Title = "Save File Dialog"
-        fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)
+        If strOpenFileName = "" Then
+            fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)
+        Else
+            fd.InitialDirectory = Path.GetDirectoryName(strOpenFileName)
+        End If
         fd.Filter = "All files (*.*)|*.*|AIML files (*.aiml)|*.aiml"
         fd.FilterIndex = 2
         fd.RestoreDirectory = True
@@ -50,6 +61,34 @@ Public Class Form1
         If fd.ShowDialog() = DialogResult.OK Then
             strFileName = fd.FileName
             SaveFile(strFileName)
+
+            strOpenFileName = strFileName
+        End If
+    End Sub
+
+    Private Sub butQuickSave_Click(sender As System.Object, e As System.EventArgs) Handles butQuickSave.Click
+        If strOpenFileName <> "" Then
+            SaveFile(strOpenFileName)
+        Else
+            Dim fd As SaveFileDialog = New SaveFileDialog()
+            Dim strFileName As String
+
+            fd.Title = "Save File Dialog"
+            If strOpenFileName = "" Then
+                fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)
+            Else
+                fd.InitialDirectory = Path.GetDirectoryName(strOpenFileName)
+            End If
+            fd.Filter = "All files (*.*)|*.*|AIML files (*.aiml)|*.aiml"
+            fd.FilterIndex = 2
+            fd.RestoreDirectory = True
+
+            If fd.ShowDialog() = DialogResult.OK Then
+                strFileName = fd.FileName
+                SaveFile(strFileName)
+
+                strOpenFileName = strFileName
+            End If
         End If
     End Sub
 
@@ -58,9 +97,11 @@ Public Class Form1
         If msgBoxResult = DialogResult.OK Then
             pnlCategories.Controls.Clear()
             arrCategories.Clear()
+            Me.Text = "AIML Editor"
         End If
 
     End Sub
+
     Private Sub txt_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs)
         txtFocused = sender
     End Sub
@@ -95,6 +136,7 @@ Public Class Form1
             AddCategory(strTemplate, strThat, strPattern)
         Next
         Console.ReadLine()
+        Me.Text = "AIML Editor - " + Path.GetFileNameWithoutExtension(strFilename)
     End Sub
 
     Sub SaveFile(ByVal strFilename As String)
